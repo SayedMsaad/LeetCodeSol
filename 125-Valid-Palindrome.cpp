@@ -1,18 +1,17 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string str=\\;
-        for(char ch:s){
-            str+=tolower(ch);
-        }
-
+        // string str=\\;
+        // for(char ch:s){
+        //     str+=tolower(ch);
+        // }
             string st=\\;
-            for(char ch:str){
+            for(char ch:s){
                 if(isalpha(ch)){
-                    st+=ch;
+                    st+=tolower(ch);
                 }
                 else if(isdigit(ch)){
-                    st+=ch;
+                    st+=tolower(ch);
                 }
             }
 
