@@ -11,23 +11,23 @@
  */
 class Solution {
 public:
-    int solve(TreeNode* root,bool &ans){
+    int solve(TreeNode* root){
         if(!root) return 0;
 
-        int left=solve(root->left,ans);
-        int right=solve(root->right,ans);
+        int left=solve(root->left);
+        int right=solve(root->right);
 
-        if(abs(left-right)>1){
-            ans=false;
+        if(abs(left-right)>1 || (left == -1 || right== -1)){
+        cout << left << \ \ << right<< \ \;
+           return -1;
         }
 
         return max(left,right)+1;
     }
     bool isBalanced(TreeNode* root) {
-        bool ans=true;
 
-        int height=solve(root,ans);
 
-        return ans;
+        int height=solve(root);
+        return height==-1?false:true;
     }
 };
